@@ -25,17 +25,9 @@
         packages = [
           pkgs.llvmPackages.clang
           pkgs.llvmPackages.openmp
-          pkgs.sdl3
 
-          pkgs.pkg-config
-          pkgs.bear
+          pkgs.entr
         ];
-
-        shellHook = ''
-          compAndRun() {
-            clang -fopenmp $(pkg-config --cflags --libs sdl3) "$1" && ./a.out
-          }
-        '';
       };
     });
   };
